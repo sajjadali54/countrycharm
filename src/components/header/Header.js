@@ -13,9 +13,10 @@ import {
   GeoAlt,
   PlusCircle, 
   Search, 
-  Globe
+
 } from 'react-bootstrap-icons';
 
+import logo from '../../assets/logo.ico'; 
 import {PLACE, FOOD, HOTEL, ALL} from '../../data/utils.js';
 
 import './Header.css';
@@ -55,7 +56,8 @@ function Header({ setAddPost, setShowSearch, onCatClick }) {
       <Container fluid className="px-lg-5">
         {/* Brand/Logo */}
         <Navbar.Brand href="#" className="d-flex align-items-center brand">
-          <Globe size={28} className="me-2" />
+          {/* <Globe size={28} className="me-2" /> */}
+          <img  src={logo} className="brand-logo me-2" alt="Logo"  style={{borderRadius: "50%", width: 60, height: 60}}/>
           <span className="brand-text">Country Charm</span>
           <span className="brand-tagline d-none d-md-inline">Discover Hidden Gems</span>
         </Navbar.Brand>
