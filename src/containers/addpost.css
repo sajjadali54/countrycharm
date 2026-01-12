@@ -1,0 +1,290 @@
+/* Add Post Modal Styling */
+.add-post-modal .modal-content {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Styling */
+.modal-header-custom {
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+  color: white;
+  border-bottom: none;
+  padding: 1.5rem 2rem;
+}
+
+.modal-title-custom {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.close-btn-custom {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn-custom:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+/* Body Styling */
+.modal-body-custom {
+  padding: 2rem;
+  background: #f8f9fa;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.modal-footer-custom {
+  background: #f8f9fa;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Category Selection Buttons */
+.category-select-btn {
+  padding: 1rem 1.5rem;
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  background: white;
+  color: #495057;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.category-select-btn:hover {
+  border-color: #00b09b;
+  color: #00b09b;
+  transform: translateY(-2px);
+}
+
+.category-select-btn.active {
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.category-icon {
+  font-size: 1.25rem;
+}
+
+.category-label {
+  font-size: 1rem;
+}
+
+/* Form Controls */
+.form-control-custom,
+.form-select-custom {
+  border: 1.5px solid #dee2e6;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.form-control-custom:focus,
+.form-select-custom:focus {
+  border-color: #00b09b;
+  box-shadow: 0 0 0 0.25rem rgba(0, 176, 155, 0.25);
+  outline: none;
+}
+
+.form-control-custom.is-invalid {
+  border-color: #dc3545;
+}
+
+.form-control-custom.is-invalid:focus {
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+/* Textarea Customization */
+textarea.form-control-custom {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Image Upload */
+.image-upload-container {
+  border: 2px dashed #dee2e6;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.image-upload-container:hover {
+  border-color: #00b09b;
+  background: rgba(0, 176, 155, 0.05);
+}
+
+.upload-hint {
+  margin-top: 0.5rem;
+}
+
+/* Submit Button */
+.submit-post-btn {
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.submit-post-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 176, 155, 0.4);
+}
+
+.submit-post-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Section Headers */
+h6.fw-medium {
+  color: #495057;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+/* Scrollbar Styling for Modal Body */
+.modal-body-custom::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body-custom::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.modal-body-custom::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+  border-radius: 4px;
+}
+
+.modal-body-custom::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #00a08b 0%, #8ab92d 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-post-modal .modal-dialog {
+    margin: 1rem;
+  }
+  
+  .modal-header-custom {
+    padding: 1.25rem;
+  }
+  
+  .modal-body-custom {
+    padding: 1.5rem;
+    max-height: 60vh;
+  }
+  
+  .modal-footer-custom {
+    padding: 1.25rem;
+  }
+  
+  .category-select-btn {
+    padding: 0.75rem 1rem;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .add-post-modal .modal-dialog {
+    margin: 0.5rem;
+  }
+  
+  .modal-title-custom {
+    font-size: 1.25rem;
+  }
+  
+  .modal-header-custom,
+  .modal-body-custom,
+  .modal-footer-custom {
+    padding: 1rem;
+  }
+  
+  .category-select-btn {
+    min-width: calc(33.333% - 0.5rem);
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .submit-post-btn {
+    width: 100%;
+  }
+  
+  .modal-footer-custom .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .modal-footer-custom .d-flex > * {
+    width: 100%;
+  }
+}
+
+/* Form Text Styling */
+.form-text {
+  font-size: 0.85rem;
+}
+
+/* Alert Styling */
+.alert {
+  border-radius: 10px;
+  border: none;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  vertical-align: middle;
+}
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Form Validation States */
+.is-valid {
+  border-color: #00b09b !important;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+/* Character Counter */
+.char-counter {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.char-counter.warning {
+  color: #ffc107;
+}
+
+.char-counter.danger {
+  color: #dc3545;
+}
