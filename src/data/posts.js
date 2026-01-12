@@ -1110,17 +1110,18 @@ let arr = [
 ];
 
 export const populate = () => {
-  let count = localStorage.getItem("count");
-  if (count) {
-    for (let i = 1; i <= +count; i++) {
-      let obj = JSON.parse(localStorage.getItem(i));
-      arr = [obj, ...arr];
-    }
-  }
+  // let count = localStorage.getItem("count");
+  // if (count) {
+  //   for (let i = 1; i <= +count; i++) {
+  //     let obj = JSON.parse(localStorage.getItem(i));
+  //     arr = [obj, ...arr];
+  //   }
+  // }
 
   return {
     allPosts: arr,
-    count: count ? count : 0,
+    // count: count ? count : 0,
+    count: arr.length - 100,
   };
 };
 
