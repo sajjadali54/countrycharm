@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Badge, Button } from 'react-bootstrap';
-import { ArrowRight, XCircle, Calendar } from 'react-bootstrap-icons';
+import { ArrowRight, Calendar } from 'react-bootstrap-icons';
 import './post.css';
 import CompletePost from './CompletePost';
 import getImage from '../../data/images';
@@ -42,7 +42,7 @@ function PostCard({ post }) {
           <div className="post-image-container">
             <Card.Img
               variant="top"
-              src={getImage(post.id, post.category)}
+              src={post.image || getImage(post.id, post.category)}
               alt={post.title}
               className="post-image"
               style={{

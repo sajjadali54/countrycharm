@@ -13,6 +13,7 @@ import {
   getDeepFiltered,
   addPost,
 } from "./../data/posts";
+import {ALL} from '../data/utils.js';
 import Header from "../components/header/Header";
 import PostsList from "../components/post/PostsList";
 
@@ -28,7 +29,7 @@ class App extends Component {
     showAddPost: false,
     currentPage: 1,
     pageSize: 9,
-    activeCategory: 'All',
+    activeCategory: ALL,
     loading: true,
     searchResultsCount: 0,
   };
@@ -37,11 +38,11 @@ class App extends Component {
     this.initializePosts();
   }
 
-  initializePosts = () => {
+  initializePosts = async () => {
     this.setState({ loading: true });
     
     try {
-      const { allPosts, count } = populate();
+      const { allPosts, count } = await populate();
       this.allPosts = allPosts;
       this.count = count;
 
@@ -78,7 +79,7 @@ class App extends Component {
   handleOnItemSelect = (category) => {
     let filteredPosts;
     
-    if (category === 'All') {
+    if (category === ALL) {
       filteredPosts = this.allPosts;
     } else {
       filteredPosts = getFiltered(category);
@@ -195,7 +196,7 @@ class App extends Component {
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <h5 className="mb-0">
-                  {this.state.activeCategory === 'All' 
+                  {this.state.activeCategory === ALL 
                     ? 'All Posts' 
                     : `${this.state.activeCategory} Posts`}
                 </h5>
@@ -203,26 +204,16 @@ class App extends Component {
                   Showing {paginated.length} of {searchResultsCount} posts
                 </small>
               </div>
-              {this.state.activeCategory !== 'All' && (
+              {this.state.activeCategory !== ALL && (
                 <button 
                   className="btn btn-outline-secondary btn-sm"
-                  onClick={() => this.handleOnItemSelect('All')}
+                  onClick={() => this.handleOnItemSelect(ALL)}
                 >
                   Show All
                 </button>
               )}
             </div>
           </div>
-        </div>
-
-        {/* Pagination - Top */}
-        <div className="container">
-          <Pagination
-            itemsCount={posts.length}
-            currentPage={currentPage}
-            pageSize={pageSize}
-            onPageChange={this.handlePageChange}
-          />
         </div>
 
         {/* Posts List */}

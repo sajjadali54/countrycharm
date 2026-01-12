@@ -16,6 +16,8 @@ import {
   Globe
 } from 'react-bootstrap-icons';
 
+import {PLACE, FOOD, HOTEL, ALL} from '../../data/utils.js';
+
 import './Header.css';
 
 function Header({ setAddPost, setShowSearch, onCatClick }) {
@@ -38,10 +40,10 @@ function Header({ setAddPost, setShowSearch, onCatClick }) {
   };
 
   const categories = [
-    { name: 'All', icon: <Hospital size={18} className="me-2" />, label: 'Home' },
-    { name: 'Food', icon: <EggFried size={18} className="me-2" />, label: 'Food' },
-    { name: 'Hotel', icon: <Building size={18} className="me-2" />, label: 'Hotels' },
-    { name: 'Place', icon: <GeoAlt size={18} className="me-2" />, label: 'Places' },
+    { name: ALL, icon: <Hospital size={18} className="me-2" />, label: 'Home' },
+    { name: FOOD, icon: <EggFried size={18} className="me-2" />, label: 'Food' },
+    { name: HOTEL, icon: <Building size={18} className="me-2" />, label: 'Hotels' },
+    { name: PLACE, icon: <GeoAlt size={18} className="me-2" />, label: 'Places' },
   ];
 
   return (

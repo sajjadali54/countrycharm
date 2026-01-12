@@ -41,7 +41,7 @@ function CompletePost({ post, onClose }) {
       <Modal.Body className="modal-body-custom">
         <div className="modal-image-container">
           <img
-            src={getImage(post.id, post.category)}
+            src={post.image || getImage(post.id, post.category)}
             alt={post.title}
             className="modal-image"
           />
@@ -59,13 +59,13 @@ function CompletePost({ post, onClose }) {
       </Modal.Body>
       
       <Modal.Footer className="border-top-0 justify-content-center py-3">
-        <Button
+        {/* <Button
           variant="outline-primary"
           onClick={onClose}
           className="px-4 py-2"
         >
           Close Article
-        </Button>
+        </Button> */}
       </Modal.Footer>
     </Modal>
   );
