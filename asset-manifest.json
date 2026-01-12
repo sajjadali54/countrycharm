@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/countrycharm/static/css/main.efea1650.css",
-    "main.js": "/countrycharm/static/js/main.f829cfb8.js",
-    "static/js/787.f055211e.chunk.js": "/countrycharm/static/js/787.f055211e.chunk.js",
+    "main.css": "/countrycharm/static/css/main.f9f6e613.css",
+    "main.js": "/countrycharm/static/js/main.13ecd477.js",
+    "static/js/488.7038be30.chunk.js": "/countrycharm/static/js/488.7038be30.chunk.js",
+    "static/media/logo.ico": "/countrycharm/static/media/logo.59c0eb0d853bc4df9afd.ico",
     "index.html": "/countrycharm/index.html",
-    "main.efea1650.css.map": "/countrycharm/static/css/main.efea1650.css.map",
-    "main.f829cfb8.js.map": "/countrycharm/static/js/main.f829cfb8.js.map",
-    "787.f055211e.chunk.js.map": "/countrycharm/static/js/787.f055211e.chunk.js.map"
+    "main.f9f6e613.css.map": "/countrycharm/static/css/main.f9f6e613.css.map",
+    "main.13ecd477.js.map": "/countrycharm/static/js/main.13ecd477.js.map",
+    "488.7038be30.chunk.js.map": "/countrycharm/static/js/488.7038be30.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.efea1650.css",
-    "static/js/main.f829cfb8.js"
+    "static/css/main.f9f6e613.css",
+    "static/js/main.13ecd477.js"
   ]
 }
