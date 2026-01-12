@@ -1,45 +1,74 @@
-import React from 'react'
-import './post.css'
+import React from 'react';
+
+import { Modal, Button } from 'react-bootstrap';
+
+import { X, Calendar, Tag } from 'react-bootstrap-icons';
 
 import getImage from '../../data/images';
 
 function CompletePost({ post, onClose }) {
-
   return (
-    <div className='container'>
-      <div className="header">
-        <div className='start_head'>
-          <span className='category'>Category: {post.category}</span>
-          <span className='close_icon' onClick={onClose}>X</span>
+    <Modal
+      show={true}
+      onHide={onClose}
+      centered
+      size="lg"
+      className="complete-post-modal"
+      backdrop="static"
+    >
+      <Modal.Header className="modal-header-custom">
+        <div className="d-flex justify-content-between align-items-center w-100">
+          <div className="d-flex align-items-center gap-3">
+            <span className="modal-category-badge">
+              <Tag size={14} className="me-1" />
+              {post.category}
+            </span>
+            <small className="d-flex align-items-center">
+              <Calendar size={14} className="me-1" />
+              {new Date().toLocaleDateString()}
+            </small>
+          </div>
+          <Button
+            variant="link"
+            onClick={onClose}
+            className="close-btn-custom p-0"
+          >
+            <X size={24} color="white" />
+          </Button>
         </div>
-        <hr></hr>
-        <div className="image_content">
+      </Modal.Header>
+      
+      <Modal.Body className="modal-body-custom">
+        <div className="modal-image-container">
           <img
             src={getImage(post.id, post.category)}
-            alt='Category'
-            width='200px'
-            height={'200px'}
+            alt={post.title}
+            className="modal-image"
           />
         </div>
-      </div>
-
-      <div className="body">
-        <h3>{post.title}</h3>
-        <p>
-          {post.body}
-        </p>
-      </div>
-      <hr></hr>
-      <div style={{ color: 'Orange', fontWeight: 'bolder', paddingLeft: '20px', textAlign: 'center' }}>
-        <span style={{ display: 'inline-block', width: '50%', paddingBottom: '1rem' }}>Author: {post.name}</span>
-        <span style={{ display: 'inline-block', width: '50%', paddingBottom: '1rem' }}>Email: {post.email}</span>
-      </div>
-      <div style={{ color: 'Orange', fontWeight: 'bolder', paddingLeft: '20px', textAlign: 'center' }}>
-        <span style={{ display: 'inline-block', width: '50%', paddingBottom: '1rem' }}>City: {post.city}</span>
-        <span style={{ display: 'inline-block', width: '50%', paddingBottom: '1rem' }}>Country: {post.country}</span>
-      </div>
-    </div>
-  )
+        
+        <h2 className="modal-title-custom mb-4">{post.title}</h2>
+        
+        <div className="post-content">
+          {post.body.split('\n').map((paragraph, index) => (
+            <p key={index} className="mb-3" style={{ lineHeight: '1.8' }}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </Modal.Body>
+      
+      <Modal.Footer className="border-top-0 justify-content-center py-3">
+        <Button
+          variant="outline-primary"
+          onClick={onClose}
+          className="px-4 py-2"
+        >
+          Close Article
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
-export default CompletePost
+export default CompletePost;
